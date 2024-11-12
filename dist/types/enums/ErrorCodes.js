@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ErrorCodes = void 0;
 var ErrorCodes;
 (function (ErrorCodes) {
     ErrorCodes[ErrorCodes["TransportError"] = -32300] = "TransportError";
@@ -12,4 +13,4 @@ var ErrorCodes;
     ErrorCodes[ErrorCodes["UnableToPerform"] = -31008] = "UnableToPerform";
     ErrorCodes[ErrorCodes["TransactionNotFound"] = -31003] = "TransactionNotFound";
     ErrorCodes[ErrorCodes["CanNotCancelTransaction"] = -31007] = "CanNotCancelTransaction";
-})(ErrorCodes = exports.ErrorCodes || (exports.ErrorCodes = {}));
+})(ErrorCodes || (exports.ErrorCodes = ErrorCodes = {}));

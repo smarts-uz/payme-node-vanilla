@@ -9,9 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.routing = void 0;
 const prepareResponse_1 = require("../utils/prepareResponse");
 const MainErrors_1 = require("../errors/MainErrors");
-exports.routing = (body, accountCreator, transaction) => __awaiter(void 0, void 0, void 0, function* () {
+const routing = (body, accountCreator, transaction) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let result;
         switch (body.method) {
@@ -34,11 +35,12 @@ exports.routing = (body, accountCreator, transaction) => __awaiter(void 0, void 
                 result = yield accountCreator.CheckTransaction(body, transaction);
                 break;
             default:
-                return prepareResponse_1.prepareResponse(body.id, new MainErrors_1.MainError().MethodNotFound());
+                return (0, prepareResponse_1.prepareResponse)(body.id, new MainErrors_1.MainError().MethodNotFound());
         }
-        return prepareResponse_1.prepareResponse(body.id, null, result);
+        return (0, prepareResponse_1.prepareResponse)(body.id, null, result);
     }
     catch (error) {
-        return prepareResponse_1.prepareResponse(body.id, error, null);
+        return (0, prepareResponse_1.prepareResponse)(body.id, error, null);
     }
 });
+exports.routing = routing;

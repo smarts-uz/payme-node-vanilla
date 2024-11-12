@@ -16,6 +16,12 @@
   "bugs": {
     "url": "https://github.com/pyfuk/paycom-nodejs/issues"
   },
+  "scripts": {
+    "dev": "tsc"
+  },
   "homepage": "https://github.com/pyfuk/paycom-nodejs#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "typescript": "^5.6.3"
+  }
 }

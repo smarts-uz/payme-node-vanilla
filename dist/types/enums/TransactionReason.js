@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TransactionReason = void 0;
 var TransactionReason;
 (function (TransactionReason) {
     TransactionReason[TransactionReason["recipientNotFound"] = 1] = "recipientNotFound";
@@ -8,4 +9,4 @@ var TransactionReason;
     TransactionReason[TransactionReason["transactionTimeOut"] = 4] = "transactionTimeOut";
     TransactionReason[TransactionReason["refund"] = 5] = "refund";
     TransactionReason[TransactionReason["unknownError"] = 10] = "unknownError";
-})(TransactionReason = exports.TransactionReason || (exports.TransactionReason = {}));
+})(TransactionReason || (exports.TransactionReason = TransactionReason = {}));

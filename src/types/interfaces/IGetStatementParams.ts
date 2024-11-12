@@ -1,4 +1,4 @@
 export interface IGetStatementParams {
-    from: number,
-    to: number
+  from: number;
+  to: number;
 }

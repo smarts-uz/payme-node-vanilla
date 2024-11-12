@@ -1,15 +1,19 @@
-import {IResponseErrorRPC} from "../types/interfaces/IResponseErrorRPC";
+import { IResponseErrorRPC } from "../types/interfaces/IResponseErrorRPC";
 
-export const prepareResponse = (id: number, error?: IResponseErrorRPC, result?: any) => {
-    if (error) {
-        return {
-            error,
-            id
-        }
-    }
-
+export const prepareResponse = (
+  id: number,
+  error?: IResponseErrorRPC,
+  result?: any
+) => {
+  if (error) {
     return {
-        result,
-        id
-    }
-}
+      error,
+      id,
+    };
+  }
+
+  return {
+    result,
+    id,
+  };
+};

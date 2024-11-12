@@ -1,7 +1,6 @@
 import { prepareResponse } from "../utils/prepareResponse";
 import { MainError } from "../errors/MainErrors";
 import { IRequestBodyRPC } from "../types/interfaces/IRequestBodyRPC";
-import { ICancelTransaction } from "../types/interfaces/ICancelTransaction";
 import { Billing } from "./billing";
 import { ITransaction } from "../types/interfaces/ITransaction";
 

@@ -1,4 +1,4 @@
- export interface ICheckPerformTransactionParams {
-    amount: number;
-    account: any;
+export interface ICheckPerformTransactionParams {
+  amount: number;
+  account: any;
 }

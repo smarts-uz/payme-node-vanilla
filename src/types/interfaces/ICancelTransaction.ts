@@ -1,6 +1,6 @@
-import {TransactionReason} from "../enums/TransactionReason";
+import { TransactionReason } from "../enums/TransactionReason";
 
 export interface ICancelTransaction {
-    id: number,
-    reason: TransactionReason
+  id: number;
+  reason: TransactionReason;
 }

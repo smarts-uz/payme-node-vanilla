@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Billing = void 0;
 const BillingErrors_1 = require("../errors/BillingErrors");
 const TransactionState_1 = require("../types/enums/TransactionState");
 const TransactionReason_1 = require("../types/enums/TransactionReason");
@@ -22,7 +23,6 @@ class Billing {
             return { allow: true };
         });
     }
-    ;
     CreateTransaction(body, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             yield transaction.find(body.params);
@@ -32,7 +32,7 @@ class Billing {
                 return {
                     create_time: transaction.getCreateTime(),
                     transaction: transaction.getId(),
-                    state: transaction.state
+                    state: transaction.state,
                 };
             }
             if (transaction.state !== TransactionState_1.TransactionState.waiting) {
@@ -45,11 +45,10 @@ class Billing {
             return {
                 create_time: transaction.getCreateTime(),
                 transaction: transaction.getId(),
-                state: transaction.state
+                state: transaction.state,
             };
         });
     }
-    ;
     PerformTransaction(body, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             yield transaction.find(body.params);
@@ -63,7 +62,7 @@ class Billing {
                 return {
                     transaction: transaction.getId(),
                     perform_time: transaction.getPerformTime(),
-                    state: transaction.state
+                    state: transaction.state,
                 };
             }
             if (this.isExpired(transaction.time)) {
@@ -75,7 +74,7 @@ class Billing {
             return {
                 transaction: transaction.getId(),
                 perform_time: transaction.getPerformTime(),
-                state: transaction.state
+                state: transaction.state,
             };
         });
     }
@@ -90,14 +89,14 @@ class Billing {
                 return {
                     transaction: transaction.getId(),
                     cancel_time: transaction.getCancelTime(),
-                    state: transaction.state
+                    state: transaction.state,
                 };
             }
             if (transaction.state !== TransactionState_1.TransactionState.payed) {
                 return {
                     transaction: transaction.getId(),
                     cancel_time: transaction.getCancelTime(),
-                    state: transaction.state
+                    state: transaction.state,
                 };
             }
             const account = this.createAccount();
@@ -109,11 +108,10 @@ class Billing {
             return {
                 transaction: transaction.getId(),
                 cancel_time: transaction.getCancelTime(),
-                state: transaction.state
+                state: transaction.state,
             };
         });
     }
-    ;
     CheckTransaction(body, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             yield transaction.find(body.params);
@@ -126,20 +124,19 @@ class Billing {
                 cancel_time: transaction.getCancelTime(),
                 transaction: transaction.getId(),
                 state: transaction.state,
-                reason: transaction.reason
+                reason: transaction.reason,
             };
         });
     }
-    ;
     GetStatement(body, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             return {
-                transactions: yield transaction.getTransactions(body.params)
+                transactions: yield transaction.getTransactions(body.params),
             };
         });
     }
     isExpired(time) {
-        return Date.now() > (time + TimeOutTime);
+        return Date.now() > time + TimeOutTime;
     }
 }
 exports.Billing = Billing;

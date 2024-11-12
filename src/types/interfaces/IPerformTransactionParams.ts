@@ -1,3 +1,3 @@
 export interface IPerformTransactionParams {
-    id: number
+  id: number;
 }

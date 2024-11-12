@@ -1,3 +1,3 @@
 export interface ICheckTransactionParams {
-    id: number,
+  id: number;
 }

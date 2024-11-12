@@ -1,27 +1,27 @@
-import {TransactionState} from "../enums/TransactionState";
-import {TransactionReason} from "../enums/TransactionReason";
+import { TransactionState } from "../enums/TransactionState";
+import { TransactionReason } from "../enums/TransactionReason";
 
 export interface ITransaction {
-    id: number;
-    time: number;
-    state: TransactionState;
-    reason: TransactionReason;
+  id: number;
+  time: number;
+  state: TransactionState;
+  reason: TransactionReason;
 
-    find(params): Promise<this>;
+  find(params): Promise<this>;
 
-    create(params): Promise<this>;
+  create(params): Promise<this>;
 
-    cancel(state: TransactionState, reason: TransactionReason): Promise<any>;
+  cancel(state: TransactionState, reason: TransactionReason): Promise<any>;
 
-    getId(): number;
+  getId(): number;
 
-    getCreateTime(): number;
+  getCreateTime(): number;
 
-    getPerformTime(): number;
+  getPerformTime(): number;
 
-    getCancelTime(): number;
+  getCancelTime(): number;
 
-    setPerformTime(time: number): void;
+  setPerformTime(time: number): void;
 
-    getTransactions(params): Promise<ITransaction[]>
+  getTransactions(params): Promise<ITransaction[]>;
 }

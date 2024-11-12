@@ -1,14 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.prepareResponse = (id, error, result) => {
+exports.prepareResponse = void 0;
+const prepareResponse = (id, error, result) => {
     if (error) {
         return {
             error,
-            id
+            id,
         };
     }
     return {
         result,
-        id
+        id,
     };
 };
+exports.prepareResponse = prepareResponse;
